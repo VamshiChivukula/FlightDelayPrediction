@@ -1,0 +1,120 @@
+
+<html> 
+
+
+<head>
+<style>
+body {
+  background-color: DodgerBlue;
+}
+
+h1 {
+  color: maroon;
+  margin-left: 40px;
+}
+</style>
+<title> Flight Delay Prediction</title>
+</head>
+
+<body> 
+    <h3><div style="text-align:center">Flight Delay Prediction</div></h3> 
+  
+<div>
+
+  <form action="/predict" method="POST"> 
+    <label for="arrival_delay">ARRIVAL_DELAY </label> 
+    <input type="text" id="arrival_delay" name="arrival_delay">btw:[-256.49-1971.0] 
+    <br> 
+    <br>
+    <label for="air_system_delay">AIR_SYSTEM_DELAY </label> 
+    <input type="text" id="air_system_delay" name="air_system_delay">btw:[0.0-1134.0] 
+    <br> 
+    <br>
+    <label for="late_aircraft_delay">LATE_AIRCRAFT_DELAY </label> 
+    <input type="text" id="late_aircraft_delay" name="late_aircraft_delay">btw:[0.0-1331.0] 
+    <br> 
+    <br>
+    <label for="airline_delay">AIRLINE_DELAY </label> 
+    <input type="text" id="airline_delay" name="airline_delay">btw:[0.0-1971.0] 
+    <br> 
+    <br>
+    <label for="security_delay">SECURITY_DELAY </label> 
+    <input type="text" id="security_delay" name="security_delay">btw:[0.0-573.0] 
+    <br> 
+    <br>
+    <label for="weather_delay">WEATHER_DELAY </label> 
+    <input type="text" id="weather_delay" name="weather_delay">btw:[0.0-1211.0] 
+    <br> 
+    <br>
+    <label for="schedule_time">SCHEDULED_TIME</label> 
+    <input type="text" id="schedule_time" name="schedule_time">btw:[18.0-718.0] 
+    <br> 
+    <br>
+    <label for="schedule_departure">SCHEDULED_DEPARTURE</label> 
+    <input type="text" id="schedule_departure" name="schedule_departure">btw:[1-2359] 
+    <br>   
+    <br>
+    <label for="flight_number">FLIGHT_NUMBER</label> 
+    <input type="text" id="flight_number" name="flight_number">btw:[1-9855] 
+    <br>  
+    <br>   
+    <label for="taxi_out">TAXI_OUT</label> 
+    <input type="text" id="taxi_out" name="taxi_out">btw:[0.00032-356.33] 
+    <br> 
+    <br>
+    <label for="taxi_in">TAXI_IN</label> 
+    <input type="text" id="taxi_in" name="taxi_in">btw:[0.000017-248.0] 
+    <br> 
+    <br>
+    <label for="wheels_on">WHEELS_ON</label> 
+    <input type="text" id="wheels_on" name="wheels_on">btw:[1.0-2400.0] 
+    <br> 
+    <br>
+    <label for="cancelled">CANCELLED</label> 
+    <select id="cancelled" name="cancelled"> 
+      <option value="0">Not Cancelled</option> 
+      <option value="1">Cancelled</option> 
+    </select> 
+    <br> 
+    <br>
+    <label for="cancellation_reason">CANCELLATION_REASON</label> 
+    <select id="cancellation_reason" name="cancellation_reason"> 
+      <option value="0">D</option> 
+      <option value="1">C</option>
+      <option value="2">A</option> 
+      <option value="3">B</option> 
+    </select> 
+    <br>
+    <br>
+    <label for="airline">AIRLINE</label> 
+    <select id="airline" name="airline"> 
+      <option value="0">HA</option> 
+      <option value="1">AS</option>
+      <option value="2">US</option> 
+      <option value="3">DL</option>
+      <option value="4">OO</option> 
+      <option value="5">EV</option>
+      <option value="6">AA</option> 
+      <option value="7">VX</option> 
+      <option value="8">MQ</option> 
+      <option value="9">WN</option>
+      <option value="10">B6</option> 
+      <option value="11">F9</option>
+      <option value="12">UA</option> 
+      <option value="13">NK</option>
+    </select> 
+    <br>
+    <br>
+    
+    <input type="submit" value="Submit"> 
+  </form> 
+  
+   <br>
+   <br>
+   <br>
+   <br>
+   {{prediction_text}}
+
+</div> 
+</body> 
+</html> 
